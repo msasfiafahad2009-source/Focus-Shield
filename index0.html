@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FocusShield - Complete Digital Well-Being & Academic Ecosystem</title>
+  <title>FocusShield - Universal Digital Well-Being & Academic Ecosystem</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts: Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -31,7 +31,7 @@
     }
   </script>
   <style>
-    /* Custom Scrollbar styling */
+    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 4px;
       height: 4px;
@@ -45,7 +45,7 @@
     }
     @keyframes pulse-subtle {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.9; transform: scale(0.99); }
+      50% { opacity: 0.95; transform: scale(0.99); }
     }
     .animate-pulse-subtle {
       animation: pulse-subtle 3s infinite ease-in-out;
@@ -55,25 +55,32 @@
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
 <body class="h-full flex flex-col justify-between items-center p-2 sm:p-4 font-sans bg-slate-950 selection:bg-indigo-500 selection:text-white overflow-x-hidden">
 
-  <!-- Header Banner for Midterm Presentation Context -->
+  <!-- Presentation Header Banner -->
   <header class="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-2 mb-2 text-center sm:text-left border-b border-slate-800/80 pb-2">
     <div>
       <div class="flex items-center justify-center sm:justify-start gap-2">
         <span class="bg-emerald-500/20 text-emerald-400 text-xs px-2.5 py-0.5 rounded-full font-semibold border border-emerald-500/30">CS Design Thinking Midterm</span>
         <span class="text-xs text-slate-400">Al-Ghazali University</span>
       </div>
-      <h1 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mt-0.5">
-        FocusShield Complete Ecosystem
+      <h1 class="text-xl sm:text-2xl font-black bg-gradient-to-r from-emerald-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mt-0.5 tracking-tight">
+        FocusShield Universal Ecosystem
       </h1>
     </div>
     <div class="flex items-center gap-2">
       <div class="text-xs text-slate-300 bg-slate-900/90 border border-slate-800 px-3 py-1.5 rounded-lg shadow-inner flex items-center gap-2">
-        <i class="fa-solid fa-graduation-cap text-indigo-400"></i>
-        <span>Target: <strong>33 Day Scholars</strong></span>
+        <i class="fa-solid fa-earth-americas text-indigo-400"></i>
+        <span>Target: <strong>All Academic Disciplines</strong></span>
       </div>
     </div>
   </header>
@@ -81,18 +88,18 @@
   <!-- Main Container: Smartphone Mockup Frame -->
   <main class="relative flex-1 flex justify-center items-center w-full max-w-md my-auto">
     <!-- Outer Phone Device Shell -->
-    <div class="relative w-full max-w-[375px] h-[730px] bg-slate-900 border-[10px] border-slate-800/90 rounded-[48px] shadow-[0_0_50px_rgba(79,70,229,0.2)] flex flex-col overflow-hidden ring-1 ring-white/10">
+    <div class="relative w-full max-w-[375px] h-[730px] bg-slate-900 border-[10px] border-slate-800/90 rounded-[48px] shadow-[0_0_60px_rgba(79,70,229,0.25)] flex flex-col overflow-hidden ring-1 ring-white/10">
       
       <!-- Phone Camera Notch / Dynamic Island -->
       <div class="absolute top-0 inset-x-0 h-6 bg-slate-900 z-50 flex justify-center items-center">
-        <div class="w-28 h-4 bg-slate-950 rounded-b-xl flex items-center justify-end px-3">
+        <div class="w-28 h-4 bg-slate-950 rounded-b-xl flex items-center justify-end px-3 border-x border-b border-slate-800/50">
           <div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center">
             <div class="w-1 h-1 rounded-full bg-blue-900/60"></div>
           </div>
         </div>
       </div>
 
-      <!-- Phone Status Bar -->
+      <!-- Phone Top Status Bar -->
       <div class="pt-7 px-5 pb-1 flex justify-between items-center text-[11px] text-slate-400 font-medium z-40 bg-slate-900/90 backdrop-blur-md select-none">
         <span id="phone-clock">09:41</span>
         <div class="flex items-center gap-1.5">
@@ -102,13 +109,13 @@
         </div>
       </div>
 
-      <!-- Mobile App Content Container -->
+      <!-- Mobile App Content Area -->
       <div class="flex-1 relative overflow-y-auto overflow-x-hidden bg-slate-950 flex flex-col">
 
-        <!-- ==================== TAB 1: DASHBOARD & APP LOCK ==================== -->
+        <!-- ==================== TAB 1: HOME DASHBOARD ==================== -->
         <section id="tab-dashboard" class="flex-1 flex flex-col p-4 space-y-3 transition-all duration-300">
           
-          <!-- App Top Header -->
+          <!-- App Header -->
           <div class="flex justify-between items-center">
             <div class="flex items-center gap-2">
               <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-500 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
@@ -116,7 +123,7 @@
               </div>
               <div>
                 <h2 class="font-bold text-sm tracking-tight text-white leading-none">FocusShield</h2>
-                <span class="text-[9.5px] text-emerald-400 font-medium">Day Scholar Edition</span>
+                <span class="text-[9.5px] text-emerald-400 font-medium">Universal Day Scholar Edition</span>
               </div>
             </div>
             
@@ -126,7 +133,39 @@
             </button>
           </div>
 
-          <!-- Screen Time Hero Banner -->
+          <!-- Major Search Engine & Quick Chips -->
+          <div class="space-y-1.5 bg-slate-900/90 border border-indigo-500/30 rounded-2xl p-2.5 shadow-sm">
+            <div class="flex justify-between items-center">
+              <label class="text-[9.5px] font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-1">
+                <i class="fa-solid fa-magnifying-glass text-[9px]"></i> Search Major / Academic Field
+              </label>
+              <select id="major-profile-select" onchange="changeMajorProfile(this.value)" class="bg-slate-950 border border-slate-700 text-indigo-300 text-[9.5px] font-bold py-0.5 px-1.5 rounded outline-none cursor-pointer">
+                <option value="Computer Science 💻">CS 💻</option>
+                <option value="Medical / Pre-Med 🩺">Medical 🩺</option>
+                <option value="Engineering ⚙️">Engineering ⚙️</option>
+                <option value="Business & Finance 📈">Business 📈</option>
+                <option value="Humanities & Law ⚖️">Law ⚖️</option>
+                <option value="Design & Architecture 🎨">Design 🎨</option>
+              </select>
+            </div>
+            <div class="relative">
+              <input type="text" 
+                     id="major-search-input" 
+                     placeholder="Search field (e.g. CS, Medical, Engineering, BBA...)" 
+                     onkeyup="filterMajorTasks(this.value)"
+                     class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-slate-100 placeholder-slate-500 outline-none focus:border-indigo-500">
+            </div>
+            <!-- Quick Preset Chips -->
+            <div class="flex gap-1 overflow-x-auto pt-1 no-scrollbar text-[9px]">
+              <button onclick="selectFieldPreset('CS')" class="px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 whitespace-nowrap">💻 CS / IT</button>
+              <button onclick="selectFieldPreset('Medical')" class="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 whitespace-nowrap">🩺 Medical</button>
+              <button onclick="selectFieldPreset('Engineering')" class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 whitespace-nowrap">⚙️ Engineering</button>
+              <button onclick="selectFieldPreset('Business')" class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 whitespace-nowrap">💼 BBA / Finance</button>
+              <button onclick="selectFieldPreset('Law')" class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 whitespace-nowrap">⚖️ Law</button>
+            </div>
+          </div>
+
+          <!-- Hero Metrics Banner -->
           <div class="bg-gradient-to-br from-slate-900 via-indigo-950/40 to-slate-900 border border-slate-800 rounded-2xl p-3.5 relative overflow-hidden shadow-md">
             <div class="flex justify-between items-start">
               <div>
@@ -141,15 +180,15 @@
               </div>
             </div>
 
-            <!-- Stats Bar -->
+            <!-- Metric Stats Row -->
             <div class="grid grid-cols-3 gap-2 mt-3 pt-2.5 border-t border-slate-800/80 text-center">
               <div>
-                <p class="text-[9.5px] text-slate-400">Saved Time</p>
+                <p class="text-[9.5px] text-slate-400">Time Saved</p>
                 <p class="text-xs font-bold text-emerald-400">2h 45m</p>
               </div>
               <div class="border-x border-slate-800">
-                <p class="text-[9.5px] text-slate-400">Classroom Due</p>
-                <p class="text-xs font-bold text-amber-400">2 Tasks</p>
+                <p class="text-[9.5px] text-slate-400">Workload Due</p>
+                <p class="text-xs font-bold text-amber-400" id="dash-due-count">2 Tasks</p>
               </div>
               <div>
                 <p class="text-[9.5px] text-slate-400">Focus Streak</p>
@@ -172,14 +211,13 @@
             <button onclick="switchTab('tab-schedule')" class="text-[10px] font-semibold text-emerald-400 hover:text-emerald-300">View</button>
           </div>
 
-          <!-- Target Apps List Header -->
+          <!-- Target App Intercept List -->
           <div class="space-y-2">
             <div class="flex justify-between items-center px-1">
               <h3 class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Protected Target Apps</h3>
               <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full font-medium">All Apps Hooked</span>
             </div>
 
-            <!-- Installed Target Apps Grid -->
             <div class="space-y-2">
               <button onclick="openFrictionGate('Instagram', 'fa-instagram', 'from-purple-600 to-pink-500')" 
                       class="w-full bg-slate-900 border border-slate-800 hover:border-indigo-500/40 rounded-xl p-2.5 flex items-center justify-between text-left transition-all active:scale-[0.99]">
@@ -237,7 +275,7 @@
                   </div>
                   <div>
                     <p class="text-xs font-semibold text-white">PUBG Mobile</p>
-                    <p class="text-[10px] text-slate-400">Gaming • Locked until assignments done</p>
+                    <p class="text-[10px] text-slate-400">Gaming • Locked until tasks done</p>
                   </div>
                 </div>
                 <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
@@ -249,9 +287,10 @@
 
         </section>
 
-        <!-- ==================== TAB 2: INTENTIONAL FRICTION GATE & HARD LOCK ==================== -->
+        <!-- ==================== TAB 2: FRICTION GATE & HARD LOCK ==================== -->
         <section id="tab-friction" class="hidden flex-1 flex flex-col p-4 justify-between transition-all duration-300 relative bg-slate-950">
           
+          <!-- State 1: Intention Prompt View -->
           <div id="friction-prompt-view" class="space-y-3 my-auto">
             <div class="text-center">
               <div id="gate-app-icon" class="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-xl shadow-lg mb-2">
@@ -259,26 +298,26 @@
               </div>
               <span class="bg-indigo-500/10 text-indigo-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-indigo-500/20">Intentional Gateway</span>
               <h3 class="text-base font-bold text-white mt-1">Why open <span id="gate-app-title">Instagram</span> now?</h3>
-              <p class="text-[11px] text-slate-400">Break mindless habit loops. Select your goal.</p>
+              <p class="text-[11px] text-slate-400">Break mindless habit loops. State your goal.</p>
             </div>
 
             <div class="space-y-1.5">
               <label class="text-[10.5px] font-semibold text-slate-400 uppercase tracking-wider block">1. State Your Purpose</label>
               <div class="grid grid-cols-2 gap-2">
-                <button type="button" onclick="setReason('Quick DM / Class Update')" class="reason-btn bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left font-medium active:bg-indigo-600 transition-all">
-                  💬 Quick DM Update
+                <button type="button" onclick="setReason('Quick Message / Study Update')" class="reason-btn bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left font-medium active:bg-indigo-600 transition-all">
+                  💬 Study Group Update
                 </button>
-                <button type="button" onclick="setReason('Study Group Reference')" class="reason-btn bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left font-medium active:bg-indigo-600 transition-all">
-                  📚 Study Reference
+                <button type="button" onclick="setReason('Lecture / Course Reference')" class="reason-btn bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left font-medium active:bg-indigo-600 transition-all">
+                  📚 Course Reference
                 </button>
-                <button type="button" onclick="setReason('Checking Urgent Event')" class="reason-btn bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left font-medium active:bg-indigo-600 transition-all">
-                  ⚡ Urgent Announcement
+                <button type="button" onclick="setReason('Checking Urgent Announcement')" class="reason-btn bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left font-medium active:bg-indigo-600 transition-all">
+                  ⚡ Campus Notice
                 </button>
-                <button type="button" onclick="setReason('Boredom / Scrolling')" class="reason-btn bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left font-medium active:bg-indigo-600 transition-all">
+                <button type="button" onclick="setReason('Mindless Break')" class="reason-btn bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left font-medium active:bg-indigo-600 transition-all">
                   🥱 Mindless Scroll
                 </button>
               </div>
-              <input type="text" id="custom-intention-input" value="Quick DM / Class Update" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-slate-200 outline-none focus:border-indigo-500">
+              <input type="text" id="custom-intention-input" value="Quick Message / Study Update" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-slate-200 outline-none focus:border-indigo-500">
             </div>
 
             <div class="space-y-1.5">
@@ -311,6 +350,7 @@
             </div>
           </div>
 
+          <!-- State 2: Active Session View -->
           <div id="friction-active-view" class="hidden flex-1 flex flex-col justify-between py-6 text-center">
             <div class="flex justify-between items-center">
               <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold px-2.5 py-0.5 rounded-full">Session Active</span>
@@ -331,7 +371,7 @@
 
               <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 max-w-xs mx-auto text-left">
                 <p class="text-[10px] text-slate-400">Stated Purpose:</p>
-                <p id="active-purpose-text" class="text-xs font-medium text-slate-200 italic mt-0.5">"Checking CS group assignment updates"</p>
+                <p id="active-purpose-text" class="text-xs font-medium text-slate-200 italic mt-0.5">"Checking course updates"</p>
               </div>
             </div>
 
@@ -340,6 +380,7 @@
             </button>
           </div>
 
+          <!-- State 3: 5-Hour Hard Lockdown Overlay Screen -->
           <div id="friction-lockdown-view" class="hidden absolute inset-0 bg-slate-950 z-50 p-5 flex flex-col justify-between text-center border-2 border-rose-600/40">
             <div class="flex justify-center pt-2">
               <span class="bg-rose-500/20 text-rose-400 border border-rose-500/40 text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
@@ -354,7 +395,7 @@
               <div>
                 <h3 class="text-lg font-bold text-white">Access Locked!</h3>
                 <p class="text-xs text-slate-400 mt-1 max-w-[220px] mx-auto">
-                  <span id="locked-target-app-name" class="text-white font-semibold">Instagram</span> is locked for <strong class="text-rose-400">5 Hours</strong> to ensure lecture focus.
+                  <span id="locked-target-app-name" class="text-white font-semibold">Instagram</span> is locked for <strong class="text-rose-400">5 Hours</strong> to ensure focus.
                 </p>
               </div>
 
@@ -372,7 +413,7 @@
 
         </section>
 
-        <!-- ==================== TAB 3: ADVANCED ACADEMIC PROTOCOLS ==================== -->
+        <!-- ==================== TAB 3: UNIVERSAL ACADEMIC & LMS PROTOCOLS ==================== -->
         <section id="tab-classroom" class="hidden flex-1 flex flex-col p-4 space-y-3 transition-all duration-300">
           
           <div class="flex justify-between items-center">
@@ -381,23 +422,23 @@
                 <i class="fa-solid fa-graduation-cap"></i>
               </div>
               <div>
-                <h3 class="text-xs font-bold text-white">Academic Protocols</h3>
-                <p class="text-[9.5px] text-slate-400">Google Sync & Proof-of-Work</p>
+                <h3 class="text-xs font-bold text-white">Universal Academic Sync</h3>
+                <p class="text-[9.5px] text-slate-400">Google, Canvas, Moodle & Blackboard</p>
               </div>
             </div>
-            <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[9.5px] font-semibold px-2 py-0.5 rounded-full">Advanced Mode</span>
+            <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[9.5px] font-semibold px-2 py-0.5 rounded-full">Universal Sync</span>
           </div>
 
-          <!-- Proof of Work AI Code Validator -->
+          <!-- Multi-Major Proof of Work Verification -->
           <div class="bg-slate-900 border border-indigo-500/30 rounded-2xl p-3 space-y-2">
             <div class="flex justify-between items-center">
-              <span class="text-[10px] font-bold uppercase text-indigo-400 tracking-wider">1. Proof-of-Work AI Code Gate</span>
-              <span class="bg-indigo-500/10 text-indigo-300 text-[9px] px-2 py-0.5 rounded border border-indigo-500/20">CS Priority</span>
+              <span class="text-[10px] font-bold uppercase text-indigo-400 tracking-wider">1. Proof-of-Work Verification</span>
+              <span id="pow-major-badge" class="bg-indigo-500/10 text-indigo-300 text-[9px] px-2 py-0.5 rounded border border-indigo-500/20">CS Profile</span>
             </div>
-            <p class="text-[10px] text-slate-400">Submit a compiling CS snippet to earn 15m unlock minutes before hard lock.</p>
-            <textarea id="code-snippet-input" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-[10px] font-mono text-emerald-400 focus:outline-none focus:border-indigo-500" placeholder="// Paste C++ / Python snippet here..."></textarea>
+            <p id="pow-desc-text" class="text-[10px] text-slate-400">Submit a compiling code snippet or GitHub commit link to earn break minutes.</p>
+            <textarea id="code-snippet-input" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-[10px] font-mono text-emerald-400 focus:outline-none focus:border-indigo-500" placeholder="// Paste C++ / Python snippet or study log here..."></textarea>
             <button onclick="verifyCodeSnippet()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-[10px] py-1.5 rounded-lg transition-all flex items-center justify-center gap-1.5">
-              <i class="fa-solid fa-code"></i> Verify Code & Unlock Break
+              <i class="fa-solid fa-check-double"></i> Verify Proof & Unlock Break
             </button>
           </div>
 
@@ -411,35 +452,15 @@
             <p class="text-[9.5px] text-slate-400">Non-essential notifications silenced & screen dimmed for non-academic apps.</p>
           </div>
 
-          <!-- Google Classroom Workload Auto-Shield -->
+          <!-- Dynamic Task List Container -->
           <div class="space-y-2 pt-1">
             <div class="flex justify-between items-center px-1">
-              <h4 class="text-[10.5px] font-bold uppercase text-slate-400 tracking-wider">Google Classroom Workload Sync</h4>
-              <span class="text-[9.5px] text-emerald-400">Live API</span>
+              <h4 class="text-[10.5px] font-bold uppercase text-slate-400 tracking-wider">Course Tasks & Deadlines</h4>
+              <span class="text-[9.5px] text-emerald-400">Live Sync</span>
             </div>
 
-            <!-- Assignment Item 1 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex justify-between items-center">
-              <div class="space-y-0.5">
-                <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-[9px] font-bold px-2 py-0.5 rounded">CS-301 Design Thinking</span>
-                <h5 class="text-xs font-semibold text-white">Midterm App Prototype Deliverable</h5>
-                <p class="text-[9.5px] text-amber-400 font-medium"><i class="fa-solid fa-clock text-[9px]"></i> Due Today • 11:59 PM</p>
-              </div>
-              <button onclick="markAssignmentDone(this)" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-[10px] px-2.5 py-1.5 rounded-lg shadow-sm transition-all">
-                Submit
-              </button>
-            </div>
-
-            <!-- Assignment Item 2 -->
-            <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex justify-between items-center">
-              <div class="space-y-0.5">
-                <span class="bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[9px] font-bold px-2 py-0.5 rounded">CS-204 Data Structures</span>
-                <h5 class="text-xs font-semibold text-white">Binary Search Trees</h5>
-                <p class="text-[9.5px] text-slate-400"><i class="fa-solid fa-calendar text-[9px]"></i> Due Tomorrow • 5:00 PM</p>
-              </div>
-              <button onclick="markAssignmentDone(this)" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-[10px] px-2.5 py-1.5 rounded-lg transition-all">
-                Submit
-              </button>
+            <div id="dynamic-task-container" class="space-y-2">
+              <!-- Tasks loaded dynamically on startup/profile change -->
             </div>
           </div>
 
@@ -451,7 +472,7 @@
           <div class="flex justify-between items-center">
             <div>
               <h3 class="text-xs font-bold text-white">Namaz, Routine & Mesh</h3>
-              <p class="text-[9.5px] text-slate-400">Cultural Routine & Peer Focus Mesh</p>
+              <p class="text-[9.5px] text-slate-400">Cultural Routine & Campus Peer Mesh</p>
             </div>
             <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9.5px] font-semibold px-2 py-0.5 rounded-full">Auto-Locked</span>
           </div>
@@ -462,8 +483,8 @@
               <span class="text-[10px] font-bold uppercase text-purple-400 tracking-wider">Campus Peer Focus Mesh</span>
               <span class="bg-purple-500/20 text-purple-300 text-[9px] px-2 py-0.5 rounded font-semibold">4 Synced</span>
             </div>
-            <p class="text-[10.5px] text-slate-200 font-medium">CS Lab Group Study Lock Active</p>
-            <p class="text-[9.5px] text-slate-400">If any peer opens distracting social apps, a focus break alert is broadcasted to the mesh.</p>
+            <p class="text-[10.5px] text-slate-200 font-medium">Library & Lab Group Study Lock Active</p>
+            <p class="text-[9.5px] text-slate-400">If any study partner opens distracting social apps, a focus break alert is broadcasted to the group mesh.</p>
           </div>
 
           <!-- Daily Schedule Timeline -->
@@ -610,7 +631,7 @@
                 <span>10:14 AM</span>
               </div>
               <div class="flex justify-between text-slate-400">
-                <span class="text-emerald-400">CLEARED: classroom.google.com</span>
+                <span class="text-emerald-400">CLEARED: university-portal.edu</span>
                 <span>09:30 AM</span>
               </div>
               <div class="flex justify-between text-slate-400">
@@ -625,11 +646,10 @@
         <!-- ==================== TAB 6: PARENTAL PORTAL TELEMETRY ==================== -->
         <section id="tab-parent" class="hidden flex-1 flex flex-col p-4 space-y-3 transition-all duration-300 bg-slate-950">
           
-          <!-- Parent Banner Header -->
           <div class="bg-gradient-to-r from-purple-950/60 to-slate-900 border border-purple-500/30 rounded-2xl p-3 flex justify-between items-center">
             <div>
               <span class="bg-purple-500/20 text-purple-300 text-[9px] font-bold px-2 py-0.5 rounded border border-purple-500/30">Parent Dashboard</span>
-              <h3 class="text-sm font-bold text-white mt-1">Ali's Telemetry Monitor</h3>
+              <h3 class="text-sm font-bold text-white mt-1">Student Telemetry Monitor</h3>
               <p class="text-[9.5px] text-slate-400">Linked Device • Al-Ghazali Student</p>
             </div>
             <div class="w-9 h-9 rounded-full bg-purple-600/20 border border-purple-500/40 flex items-center justify-center text-purple-300">
@@ -637,7 +657,6 @@
             </div>
           </div>
 
-          <!-- Telemetry Stats Cards -->
           <div class="grid grid-cols-2 gap-2">
             <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5">
               <p class="text-[9.5px] text-slate-400">Daily Screen Time</p>
@@ -646,13 +665,12 @@
             </div>
 
             <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5">
-              <p class="text-[9.5px] text-slate-400">Classroom Workload</p>
+              <p class="text-[9.5px] text-slate-400">Course Workload</p>
               <p class="text-base font-bold text-amber-400 mt-0.5">85% Done</p>
               <span class="text-[9px] text-slate-400">1 assignment left</span>
             </div>
           </div>
 
-          <!-- Communication Metadata Log (Parent Monitoring) -->
           <div class="bg-slate-900 border border-slate-800 rounded-2xl p-3 space-y-2">
             <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Communication & Call Activity</h4>
 
@@ -668,14 +686,13 @@
               <div class="flex justify-between items-center p-1.5 rounded bg-slate-950/60">
                 <div>
                   <p class="font-semibold text-slate-200">Study Group Chat</p>
-                  <p class="text-[9.5px] text-slate-400">WhatsApp CS Group</p>
+                  <p class="text-[9.5px] text-slate-400">WhatsApp Academic Group</p>
                 </div>
                 <span class="text-[9.5px] text-indigo-400 font-medium">Educational</span>
               </div>
             </div>
           </div>
 
-          <!-- Parent Remote Control Action -->
           <div class="pt-1">
             <button onclick="parentRemoteLock()" class="w-full bg-gradient-to-r from-purple-600 to-rose-600 text-white font-bold py-2.5 rounded-xl text-xs shadow-md flex items-center justify-center gap-2">
               <i class="fa-solid fa-lock"></i>
@@ -720,7 +737,6 @@
         </button>
       </nav>
 
-      <!-- Phone Home Indicator Bar -->
       <div class="h-4 bg-slate-950 flex justify-center items-center pb-0.5">
         <div class="w-28 h-1 bg-slate-700 rounded-full"></div>
       </div>
@@ -745,7 +761,7 @@
     </div>
   </div>
 
-  <!-- Midterm Presentation Controller Deck (Outside Phone Shell) -->
+  <!-- Midterm Presentation Controller Deck -->
   <footer class="w-full max-w-2xl bg-slate-900/90 border border-slate-800/90 rounded-2xl p-2.5 mt-2 shadow-xl backdrop-blur-md">
     <div class="flex items-center justify-between mb-1.5 px-1">
       <span class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
@@ -787,9 +803,8 @@
     </div>
   </footer>
 
-  <!-- Controller JavaScript Logic -->
+  <!-- App Core Logic -->
   <script>
-    // State Variables
     let currentTab = 'tab-dashboard';
     let globalShieldActive = true;
     let selectedAppGate = 'Instagram';
@@ -799,6 +814,64 @@
     let secondsLeftActive = 8;
     let secondsLeftLockdown = 5 * 3600;
 
+    // Major Task Database
+    const majorDatabase = {
+      'Computer Science 💻': {
+        badge: 'CS Profile',
+        desc: 'Submit a compiling code snippet or GitHub commit link to earn break minutes.',
+        placeholder: '// Paste C++ / Python snippet or GitHub commit link here...',
+        tasks: [
+          { course: 'CS-301 Design Thinking', title: 'Midterm App Prototype Deliverable', due: 'Due Today • 11:59 PM', color: 'amber' },
+          { course: 'CS-204 Data Structures', title: 'Binary Search Tree Implementation', due: 'Due Tomorrow • 5:00 PM', color: 'indigo' }
+        ]
+      },
+      'Medical / Pre-Med 🩺': {
+        badge: 'Medical Profile',
+        desc: 'Verify active recall flashcards (Anki/Quizlet) or clinical notes to earn break minutes.',
+        placeholder: 'Paste Anki flashcard session link or medical revision summary...',
+        tasks: [
+          { course: 'MED-201 Human Anatomy', title: 'Cardiovascular System Quiz & Anki Deck', due: 'Due Today • 08:00 PM', color: 'amber' },
+          { course: 'MED-305 Pharmacology', title: 'Drug Classification & Dosage Case Study', due: 'Due Tomorrow • 11:00 AM', color: 'indigo' }
+        ]
+      },
+      'Engineering ⚙️': {
+        badge: 'Engineering Profile',
+        desc: 'Submit lab calculation report or CAD verification link to earn break minutes.',
+        placeholder: 'Paste CAD rendering link or circuit calculation notes...',
+        tasks: [
+          { course: 'ENG-304 Circuit Analysis', title: 'Operational Amplifier Lab Simulation', due: 'Due Today • 10:00 PM', color: 'amber' },
+          { course: 'ENG-202 Thermodynamics', title: 'Entropy Calculation Problem Set', due: 'Due In 2 Days • 4:00 PM', color: 'indigo' }
+        ]
+      },
+      'Business & Finance 📈': {
+        badge: 'Business Profile',
+        desc: 'Submit case study analysis summary or financial model proof to earn break minutes.',
+        placeholder: 'Paste case study summary or spreadsheet analysis link...',
+        tasks: [
+          { course: 'BUS-401 Strategic Mgmt', title: 'Tech Industry Case Study Analysis', due: 'Due Today • 11:59 PM', color: 'amber' },
+          { course: 'FIN-302 Corporate Finance', title: 'DCF Valuation & Excel Model', due: 'Due Tomorrow • 3:00 PM', color: 'indigo' }
+        ]
+      },
+      'Humanities & Law ⚖️': {
+        badge: 'Law / Humanities Profile',
+        desc: 'Submit constitutional case brief, essay draft, or reading goal verification.',
+        placeholder: 'Paste legal case brief summary or essay outline...',
+        tasks: [
+          { course: 'LAW-201 Constitutional Law', title: 'Supreme Court Precedent Case Brief', due: 'Due Today • 09:00 PM', color: 'amber' },
+          { course: 'SOC-105 Modern Philosophy', title: 'Ethics & Society Essay Draft', due: 'Due In 3 Days • 5:00 PM', color: 'indigo' }
+        ]
+      },
+      'Design & Architecture 🎨': {
+        badge: 'Design Profile',
+        desc: 'Submit portfolio 3D rendering link or structural drafting proof.',
+        placeholder: 'Paste Figma / CAD rendering link or studio draft...',
+        tasks: [
+          { course: 'DES-301 Architectural Studio', title: 'Urban Housing 3D Render & Floorplan', due: 'Due Today • 11:59 PM', color: 'amber' },
+          { course: 'DES-204 UX Research', title: 'User Journey Map & Wireframe Deck', due: 'Due Tomorrow • 2:00 PM', color: 'indigo' }
+        ]
+      }
+    };
+
     function updateClock() {
       const now = new Date();
       const hrs = String(now.getHours()).padStart(2, '0');
@@ -807,6 +880,62 @@
     }
     setInterval(updateClock, 1000);
     updateClock();
+
+    function selectFieldPreset(presetKey) {
+      if (presetKey === 'CS') changeMajorProfile('Computer Science 💻');
+      else if (presetKey === 'Medical') changeMajorProfile('Medical / Pre-Med 🩺');
+      else if (presetKey === 'Engineering') changeMajorProfile('Engineering ⚙️');
+      else if (presetKey === 'Business') changeMajorProfile('Business & Finance 📈');
+      else if (presetKey === 'Law') changeMajorProfile('Humanities & Law ⚖️');
+      else if (presetKey === 'Design') changeMajorProfile('Design & Architecture 🎨');
+    }
+
+    function changeMajorProfile(selectedMajor) {
+      const data = majorDatabase[selectedMajor] || majorDatabase['Computer Science 💻'];
+      
+      document.getElementById('pow-major-badge').innerText = data.badge;
+      document.getElementById('pow-desc-text').innerText = data.desc;
+      document.getElementById('code-snippet-input').placeholder = data.placeholder;
+      document.getElementById('major-profile-select').value = selectedMajor;
+
+      // Render Dynamic Tasks
+      const container = document.getElementById('dynamic-task-container');
+      container.innerHTML = '';
+      
+      data.tasks.forEach(t => {
+        const taskHtml = `
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex justify-between items-center">
+            <div class="space-y-0.5">
+              <span class="bg-${t.color}-500/10 text-${t.color}-400 border border-${t.color}-500/20 text-[9px] font-bold px-2 py-0.5 rounded">${t.course}</span>
+              <h5 class="text-xs font-semibold text-white">${t.title}</h5>
+              <p class="text-[9.5px] text-${t.color}-400 font-medium"><i class="fa-solid fa-clock text-[9px]"></i> ${t.due}</p>
+            </div>
+            <button onclick="markAssignmentDone(this)" class="bg-${t.color === 'amber' ? 'amber-500 hover:bg-amber-600 text-slate-950' : 'indigo-600 hover:bg-indigo-500 text-white'} font-bold text-[10px] px-2.5 py-1.5 rounded-lg shadow-sm transition-all">
+              Submit
+            </button>
+          </div>
+        `;
+        container.innerHTML += taskHtml;
+      });
+    }
+
+    function filterMajorTasks(searchTerm) {
+      const q = searchTerm.toLowerCase().trim();
+      
+      if (q.includes('med') || q.includes('mbbs') || q.includes('doctor') || q.includes('bio')) {
+        changeMajorProfile('Medical / Pre-Med 🩺');
+      } else if (q.includes('eng') || q.includes('mech') || q.includes('elec') || q.includes('civil')) {
+        changeMajorProfile('Engineering ⚙️');
+      } else if (q.includes('bus') || q.includes('fin') || q.includes('bba') || q.includes('econ')) {
+        changeMajorProfile('Business & Finance 📈');
+      } else if (q.includes('law') || q.includes('hum') || q.includes('phil') || q.includes('arts')) {
+        changeMajorProfile('Humanities & Law ⚖️');
+      } else if (q.includes('des') || q.includes('arch') || q.includes('cad') || q.includes('ux')) {
+        changeMajorProfile('Design & Architecture 🎨');
+      } else if (q.includes('cs') || q.includes('code') || q.includes('dev') || q.includes('tech') || q.includes('it')) {
+        changeMajorProfile('Computer Science 💻');
+      }
+    }
 
     function switchTab(tabId) {
       const tabs = ['tab-dashboard', 'tab-friction', 'tab-classroom', 'tab-schedule', 'tab-safety', 'tab-parent'];
@@ -905,6 +1034,8 @@
       document.getElementById('friction-lockdown-view').classList.remove('hidden');
 
       document.getElementById('locked-target-app-name').innerText = selectedAppGate;
+      
+      // STRICT 5-HOUR LOCKOUT TIMER
       secondsLeftLockdown = 5 * 3600;
 
       const clock = document.getElementById('lockdown-clock-display');
@@ -928,9 +1059,9 @@
     function verifyCodeSnippet() {
       const code = document.getElementById('code-snippet-input').value;
       if (code.trim().length > 5) {
-        alert("✅ Code Snippet Compiled & Verified! Earned 15-minute study break.");
+        alert("✅ Academic Proof Verified! Earned 15-minute study break.");
       } else {
-        alert("⚠️ Please paste a valid C++ / Python code snippet to verify.");
+        alert("⚠️ Please paste valid proof of work (notes, code, or assignment link) to verify.");
       }
     }
 
@@ -945,7 +1076,6 @@
     }
 
     function closeEmergencyCall() {
-      document.getElementById('emergency-call-modal').classList.hidden = true;
       document.getElementById('emergency-call-modal').classList.add('hidden');
     }
 
@@ -963,6 +1093,11 @@
     function parentRemoteLock() {
       triggerHardLockNow();
     }
+
+    // Initialize Default Major Tasks
+    window.onload = function() {
+      changeMajorProfile('Computer Science 💻');
+    };
   </script>
 </body>
 </html>
