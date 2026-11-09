@@ -2,8 +2,8 @@
 <html lang="en" class="h-full bg-slate-950 text-slate-100">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FocusShield - Complete Digital Well-Being & Academic Ecosystem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>FocusShield - Digital Well-Being & Academic Ecosystem</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -35,560 +35,539 @@
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between items-center p-2 sm:p-4 font-sans bg-slate-950 text-slate-100 selection:bg-indigo-500 selection:text-white">
+<body class="h-full w-full flex justify-center items-center font-sans bg-slate-950 text-slate-100 selection:bg-indigo-500 selection:text-white overflow-hidden">
 
-  <!-- Header Banner -->
-  <header class="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-2 mb-2 text-center sm:text-left border-b border-slate-800/80 pb-2">
-    <div>
-      <div class="flex items-center justify-center sm:justify-start gap-2">
-        <span class="bg-emerald-500/20 text-emerald-400 text-xs px-2.5 py-0.5 rounded-full font-semibold border border-emerald-500/30">CS Design Thinking Midterm</span>
-        <span class="text-xs text-slate-400">Al-Ghazali University</span>
-      </div>
-      <h1 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-emerald-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mt-0.5">
-        FocusShield Complete Ecosystem
-      </h1>
-    </div>
-    <div class="flex items-center gap-2">
-      <div class="text-xs text-slate-300 bg-slate-900/90 border border-slate-800 px-3 py-1.5 rounded-lg shadow-inner flex items-center gap-2">
-        <i class="fa-solid fa-graduation-cap text-indigo-400"></i>
-        <span>Target: <strong>All Academic Majors</strong></span>
-      </div>
-    </div>
-  </header>
+  <!-- Main Web App Container (Full Viewport Standalone App Layout) -->
+  <div class="relative w-full max-w-md h-full sm:h-[90vh] sm:max-h-[850px] bg-slate-950 sm:border sm:border-slate-800 sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden">
 
-  <!-- Smartphone Mockup Frame -->
-  <main class="relative flex-1 flex justify-center items-center w-full max-w-md my-auto py-2">
-    <div class="relative w-full max-w-[375px] h-[730px] bg-slate-900 border-[10px] border-slate-800/90 rounded-[48px] shadow-[0_0_50px_rgba(79,70,229,0.2)] flex flex-col overflow-hidden ring-1 ring-white/10">
-      
-      <!-- Phone Camera Notch -->
-      <div class="absolute top-0 inset-x-0 h-6 bg-slate-900 z-50 flex justify-center items-center">
-        <div class="w-28 h-4 bg-slate-950 rounded-b-xl flex items-center justify-end px-3">
-          <div class="w-2.5 h-2.5 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center">
-            <div class="w-1 h-1 rounded-full bg-blue-900/60"></div>
+    <!-- USER GUIDE MODAL -->
+    <div id="quick-guide-modal" class="hidden absolute inset-0 bg-slate-950/95 z-50 p-5 overflow-y-auto flex flex-col justify-between">
+      <div class="space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-compass text-indigo-400 text-lg"></i>
+            <h3 class="text-sm font-bold text-white">How FocusShield Works</h3>
+          </div>
+          <button onclick="toggleQuickGuide()" class="text-slate-400 hover:text-white text-xs">
+            <i class="fa-solid fa-xmark text-base"></i>
+          </button>
+        </div>
+
+        <div class="space-y-3 text-xs text-slate-300 leading-relaxed">
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
+            <h4 class="font-bold text-emerald-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-magnifying-glass"></i> 1. Major Search & LMS Sync
+            </h4>
+            <p class="text-[11px] text-slate-400">Select or search your major (CS, Medical, Eng, BBA) on the Dashboard to auto-sync your course deadlines and customized study verification gates.</p>
+          </div>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
+            <h4 class="font-bold text-indigo-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-door-closed"></i> 2. Friction Gate & 5-Hour Lock
+            </h4>
+            <p class="text-[11px] text-slate-400">Tapping a protected app forces you to state your intent. If time runs out, a strict 5-Hour Hard Lock is enforced to protect your focus.</p>
+          </div>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
+            <h4 class="font-bold text-amber-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-mosque"></i> 3. Namaz & Rest Routine Guide
+            </h4>
+            <p class="text-[11px] text-slate-400"><strong>Prayer Slots:</strong> During Namaz times (Fajr, Dhuhr, Asr, Maghrib, Isha), non-essential apps pause so you can pray without distraction.<br>
+            <strong>Rest Slot:</strong> Scheduled break window (e.g., Dhuhr & Lunch) where app restrictions pause automatically for healthy rest.</p>
+          </div>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 space-y-1">
+            <h4 class="font-bold text-rose-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-phone"></i> 4. Emergency Family Calls
+            </h4>
+            <p class="text-[11px] text-slate-400">Emergency contacts (Parents, Siblings) bypass all hard locks so family can always reach you.</p>
           </div>
         </div>
       </div>
 
-      <!-- Phone Status Bar -->
-      <div class="pt-7 px-5 pb-1 flex justify-between items-center text-[11px] text-slate-400 font-medium z-40 bg-slate-900/90 backdrop-blur-md select-none">
-        <span id="phone-clock">09:41</span>
-        <div class="flex items-center gap-1.5">
-          <i class="fa-solid fa-signal text-[10px]"></i>
-          <i class="fa-solid fa-wifi text-[10px]"></i>
-          <i class="fa-solid fa-battery-three-quarters text-xs text-emerald-400"></i>
-        </div>
-      </div>
+      <button onclick="toggleQuickGuide()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-xl text-xs mt-4 shadow-lg">
+        Got It! Return to App
+      </button>
+    </div>
 
-      <!-- App Screen Content Shell -->
-      <div class="flex-1 relative overflow-y-auto overflow-x-hidden bg-slate-950 flex flex-col">
+    <!-- App Screen Content Shell -->
+    <div class="flex-1 relative overflow-y-auto overflow-x-hidden bg-slate-950 flex flex-col">
 
-        <!-- ==================== TAB 1: DASHBOARD ==================== -->
-        <section id="tab-dashboard" class="flex-1 flex flex-col p-4 space-y-3 transition-all duration-300">
-          
-          <div class="flex justify-between items-center">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-emerald-500 to-indigo-600 flex items-center justify-center text-white shadow-lg">
-                <i class="fa-solid fa-shield-halved text-sm"></i>
-              </div>
-              <div>
-                <h2 class="font-bold text-sm tracking-tight text-white leading-none">FocusShield</h2>
-                <span id="current-major-tag" class="text-[9.5px] text-emerald-400 font-medium">💻 CS / IT Profile</span>
-              </div>
+      <!-- ==================== TAB 1: DASHBOARD ==================== -->
+      <section id="tab-dashboard" class="flex-1 flex flex-col p-4 space-y-4 transition-all duration-300">
+        
+        <!-- Top App Header -->
+        <div class="flex justify-between items-center border-b border-slate-800/80 pb-3">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-xl bg-slate-900 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-sm">
+              <i class="fa-solid fa-shield-halved text-sm"></i>
             </div>
-            
-            <button id="main-shield-btn" onclick="toggleGlobalShield()" class="bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1.5 transition-all">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <div>
+              <h2 class="font-bold text-sm tracking-tight text-white leading-none">FocusShield</h2>
+              <span id="current-major-tag" class="text-[9.5px] text-emerald-400 font-medium">💻 CS / IT Profile</span>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-1.5">
+            <button onclick="toggleQuickGuide()" class="bg-slate-900 hover:bg-slate-850 border border-slate-800 text-slate-300 text-[10px] font-semibold px-2 py-1 rounded-full flex items-center gap-1" title="App Guide">
+              <i class="fa-solid fa-circle-question text-indigo-400"></i> Guide
+            </button>
+            <button id="main-shield-btn" onclick="toggleGlobalShield()" class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-[10px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
               <span id="shield-status-text">Shield ACTIVE</span>
             </button>
           </div>
+        </div>
 
-          <!-- UNIVERSAL MAJOR SEARCH BAR -->
-          <div class="space-y-1.5 bg-slate-900/90 border border-indigo-500/30 rounded-2xl p-2.5 shadow-sm">
-            <label class="text-[9.5px] font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-1">
-              <i class="fa-solid fa-magnifying-glass text-[9px]"></i> Search Major / Academic Field
-            </label>
-            <input type="text" 
-                   id="major-search-input" 
-                   placeholder="Search field (CS, Medical, Engineering, BBA...)" 
-                   onkeyup="filterMajorTasks(this.value)"
-                   class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-slate-100 placeholder-slate-500 outline-none focus:border-indigo-500">
-            <div class="flex gap-1 overflow-x-auto pt-1 no-scrollbar text-[9px]">
-              <button onclick="selectFieldPreset('CS')" class="px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 whitespace-nowrap">💻 CS / IT</button>
-              <button onclick="selectFieldPreset('Medical')" class="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 whitespace-nowrap">🩺 Medical</button>
-              <button onclick="selectFieldPreset('Engineering')" class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 whitespace-nowrap">⚙️ Engineering</button>
-              <button onclick="selectFieldPreset('Business')" class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 whitespace-nowrap">💼 BBA / Finance</button>
+        <!-- UNIVERSAL MAJOR SEARCH BAR -->
+        <div class="space-y-2 bg-slate-900/80 border border-slate-800 rounded-2xl p-3">
+          <label class="text-[9.5px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+            <i class="fa-solid fa-magnifying-glass text-[9px] text-indigo-400"></i> Search Academic Discipline
+          </label>
+          <input type="text" 
+                 id="major-search-input" 
+                 placeholder="Search field (CS, Medical, Engineering, BBA...)" 
+                 onkeyup="filterMajorTasks(this.value)"
+                 class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-100 placeholder-slate-500 outline-none focus:border-indigo-500/50">
+          <div class="flex gap-1.5 overflow-x-auto pt-1 no-scrollbar text-[9px]">
+            <button onclick="selectFieldPreset('CS')" class="px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 whitespace-nowrap hover:bg-slate-750">💻 CS / IT</button>
+            <button onclick="selectFieldPreset('Medical')" class="px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 whitespace-nowrap hover:bg-slate-750">🩺 Medical</button>
+            <button onclick="selectFieldPreset('Engineering')" class="px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 whitespace-nowrap hover:bg-slate-750">⚙️ Engineering</button>
+            <button onclick="selectFieldPreset('Business')" class="px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700/60 whitespace-nowrap hover:bg-slate-750">💼 Business</button>
+          </div>
+        </div>
+
+        <!-- Hero Metrics Card -->
+        <div class="bg-slate-900/90 border border-slate-800/90 rounded-2xl p-3.5 space-y-3">
+          <div class="flex justify-between items-start">
+            <div>
+              <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Today's Phone Time</p>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-2xl font-black text-white tracking-tight">3h 12m</span>
+                <span class="text-[11px] text-emerald-400 font-medium">↓ 42% vs yesterday</span>
+              </div>
+            </div>
+            <div class="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300">
+              <i class="fa-solid fa-chart-simple text-sm"></i>
             </div>
           </div>
 
-          <!-- Hero Metrics Card -->
-          <div class="bg-gradient-to-br from-slate-900 via-indigo-950/40 to-slate-900 border border-slate-800 rounded-2xl p-3.5 relative overflow-hidden shadow-md">
-            <div class="flex justify-between items-start">
-              <div>
-                <p class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Today's Phone Time</p>
-                <div class="flex items-baseline gap-2 mt-0.5">
-                  <span class="text-2xl font-black text-white tracking-tight">3h 12m</span>
-                  <span class="text-[11px] text-emerald-400 font-medium"><i class="fa-solid fa-arrow-down text-[10px]"></i> 42% vs yesterday</span>
+          <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-800 text-center">
+            <div class="bg-slate-950/50 p-2 rounded-xl">
+              <p class="text-[9.5px] text-slate-400">Classroom Due</p>
+              <p id="dashboard-task-count" class="text-xs font-bold text-amber-400 mt-0.5">2 Tasks</p>
+            </div>
+            <div class="bg-slate-950/50 p-2 rounded-xl">
+              <p class="text-[9.5px] text-slate-400">Focus Streak</p>
+              <p class="text-xs font-bold text-purple-400 mt-0.5">5 Days 🔥</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Namaz & Rest Widget -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-3 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-400 text-sm">
+              <i class="fa-solid fa-mosque"></i>
+            </div>
+            <div>
+              <p class="text-[11px] font-semibold text-slate-200">Next: Dhuhr & Rest Break</p>
+              <p class="text-[9.5px] text-slate-400">1:15 PM - 2:15 PM (Apps Paused for Prayer)</p>
+            </div>
+          </div>
+          <button onclick="switchTab('tab-schedule')" class="text-[10px] font-semibold text-emerald-400 hover:text-emerald-300">Schedule</button>
+        </div>
+
+        <!-- Protected Target Apps Grid -->
+        <div class="space-y-2.5 pt-1">
+          <div class="flex justify-between items-center px-1">
+            <h3 class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Protected Apps</h3>
+            <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full font-medium">Gate Active</span>
+          </div>
+
+          <div class="space-y-2.5">
+            <button onclick="openFrictionGate('Instagram', 'fa-instagram', 'from-purple-600 to-pink-500')" 
+                    class="w-full bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-xl p-3 flex items-center justify-between text-left transition-all active:scale-[0.99]">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-purple-400 text-base">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-white">Instagram</p>
+                  <p class="text-[10px] text-slate-400">Intentional Friction Gate Active</p>
                 </div>
               </div>
-              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                <i class="fa-solid fa-chart-simple text-lg"></i>
-              </div>
-            </div>
+              <span class="bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-[10px] font-semibold px-2 py-0.5 rounded-md flex items-center gap-1">
+                <i class="fa-solid fa-door-closed text-[9px]"></i> Gate Active
+              </span>
+            </button>
 
-            <div class="grid grid-cols-3 gap-2 mt-3 pt-2.5 border-t border-slate-800/80 text-center">
-              <div>
-                <p class="text-[9.5px] text-slate-400">Saved Time</p>
-                <p class="text-xs font-bold text-emerald-400">2h 45m</p>
+            <button onclick="openFrictionGate('TikTok', 'fa-tiktok', 'from-slate-800 to-slate-950')" 
+                    class="w-full bg-slate-900/90 border border-slate-800 hover:border-slate-700 rounded-xl p-3 flex items-center justify-between text-left transition-all active:scale-[0.99]">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-cyan-400 text-base">
+                  <i class="fa-brands fa-tiktok"></i>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-white">TikTok</p>
+                  <p class="text-[10px] text-slate-400">5-Hour Hard Lock Set</p>
+                </div>
               </div>
-              <div class="border-x border-slate-800">
-                <p class="text-[9.5px] text-slate-400">Classroom Due</p>
-                <p id="dashboard-task-count" class="text-xs font-bold text-amber-400">2 Tasks</p>
-              </div>
-              <div>
-                <p class="text-[9.5px] text-slate-400">Focus Streak</p>
-                <p class="text-xs font-bold text-purple-400">5 Days 🔥</p>
-              </div>
+              <span class="bg-rose-500/10 text-rose-300 border border-rose-500/20 text-[10px] font-semibold px-2 py-0.5 rounded-md flex items-center gap-1">
+                <i class="fa-solid fa-lock text-[9px]"></i> 5-Hr Lock
+              </span>
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==================== TAB 2: INTENTIONAL FRICTION GATE & HARD LOCK ==================== -->
+      <section id="tab-friction" class="hidden flex-1 flex flex-col p-4 justify-between transition-all duration-300 relative bg-slate-950">
+        
+        <div id="friction-prompt-view" class="space-y-4 my-auto">
+          <div class="text-center space-y-1">
+            <div id="gate-app-icon" class="w-12 h-12 mx-auto rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-purple-400 text-xl mb-2">
+              <i id="gate-app-icon-i" class="fa-brands fa-instagram"></i>
             </div>
+            <span class="bg-slate-800 text-slate-300 text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-slate-700">Intentional Gateway</span>
+            <h3 class="text-base font-bold text-white mt-1">Why open <span id="gate-app-title">Instagram</span> now?</h3>
+            <p class="text-[11px] text-slate-400">State your objective to avoid mindless scrolling.</p>
           </div>
 
-          <!-- Namaz Alert Widget -->
-          <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5 flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-sm">
-                <i class="fa-solid fa-mosque"></i>
-              </div>
-              <div>
-                <p class="text-[11px] font-semibold text-slate-200">Next Slot: Dhuhr & Rest Break</p>
-                <p class="text-[10px] text-slate-400">1:15 PM - 2:15 PM (Auto-Rest Mode)</p>
-              </div>
-            </div>
-            <button onclick="switchTab('tab-schedule')" class="text-[10px] font-semibold text-emerald-400 hover:text-emerald-300">View</button>
-          </div>
-
-          <!-- Protected Target Apps Grid -->
           <div class="space-y-2">
-            <div class="flex justify-between items-center px-1">
-              <h3 class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Protected Target Apps</h3>
-              <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full font-medium">All Apps Hooked</span>
+            <label class="text-[10.5px] font-semibold text-slate-400 uppercase tracking-wider block">1. State Your Purpose</label>
+            <div class="grid grid-cols-2 gap-2">
+              <button type="button" onclick="setReason('Quick Message Check')" class="bg-slate-900 hover:bg-slate-850 text-slate-200 text-xs p-2.5 rounded-xl border border-slate-800 text-left font-medium">💬 DM Update</button>
+              <button type="button" onclick="setReason('Study Group Reference')" class="bg-slate-900 hover:bg-slate-850 text-slate-200 text-xs p-2.5 rounded-xl border border-slate-800 text-left font-medium">📚 Study Reference</button>
+            </div>
+            <input type="text" id="custom-intention-input" value="Quick DM Update" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-200 outline-none focus:border-slate-700">
+          </div>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex items-start gap-2">
+            <i class="fa-solid fa-circle-info text-slate-400 text-xs mt-0.5"></i>
+            <p class="text-[10px] text-slate-400 leading-tight">
+              <strong>Notice:</strong> When your timed session ends, the app locks for <strong>5 Hours</strong> to maintain lecture focus.
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-1">
+            <button onclick="startFrictionSession()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-xl text-xs shadow-md flex items-center justify-center gap-2">
+              <span>Start Intentional Session</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+
+            <button onclick="triggerHardLockNow()" class="w-full bg-slate-900 hover:bg-slate-850 border border-rose-500/30 text-rose-300 font-semibold py-2 rounded-xl text-xs flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-lock text-rose-400"></i>
+              <span>Trigger 5-Hour Hard Lock Now</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="friction-active-view" class="hidden flex-1 flex flex-col justify-between py-6 text-center">
+          <div class="flex justify-between items-center">
+            <span class="bg-slate-800 text-slate-300 border border-slate-700 text-[10px] font-bold px-2.5 py-0.5 rounded-full">Session Active</span>
+            <button onclick="triggerHardLockNow()" class="text-rose-400 text-xs font-medium hover:underline">Force Lock</button>
+          </div>
+
+          <div class="my-auto space-y-4">
+            <div class="relative w-36 h-36 mx-auto flex items-center justify-center bg-slate-900 rounded-full border border-slate-800">
+              <div class="flex flex-col items-center justify-center">
+                <span id="gate-active-clock" class="text-2xl font-black text-white font-mono">00:08</span>
+                <span class="text-[9px] text-slate-400 uppercase tracking-widest mt-1">Remaining</span>
+              </div>
             </div>
 
-            <div class="space-y-2">
-              <button onclick="openFrictionGate('Instagram', 'fa-instagram', 'from-purple-600 to-pink-500')" 
-                      class="w-full bg-slate-900 border border-slate-800 hover:border-indigo-500/40 rounded-xl p-2.5 flex items-center justify-between text-left transition-all active:scale-[0.99]">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-base">
-                    <i class="fa-brands fa-instagram"></i>
-                  </div>
-                  <div>
-                    <p class="text-xs font-semibold text-white">Instagram</p>
-                    <p class="text-[10px] text-slate-400">Social & Reels • 45m limit set</p>
-                  </div>
-                </div>
-                <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
-                  <i class="fa-solid fa-door-closed text-[9px]"></i> Gate Active
-                </span>
-              </button>
-
-              <button onclick="openFrictionGate('TikTok', 'fa-tiktok', 'from-slate-800 to-slate-950')" 
-                      class="w-full bg-slate-900 border border-slate-800 hover:border-indigo-500/40 rounded-xl p-2.5 flex items-center justify-between text-left transition-all active:scale-[0.99]">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-lg bg-slate-950 border border-slate-700 flex items-center justify-center text-cyan-400 text-base">
-                    <i class="fa-brands fa-tiktok"></i>
-                  </div>
-                  <div>
-                    <p class="text-xs font-semibold text-white">TikTok</p>
-                    <p class="text-[10px] text-slate-400">Short Videos • Locked past 11:30 PM</p>
-                  </div>
-                </div>
-                <span class="bg-rose-500/10 text-rose-400 border border-rose-500/20 text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
-                  <i class="fa-solid fa-lock text-[9px]"></i> Hard Lock
-                </span>
-              </button>
-
-              <button onclick="openFrictionGate('Snapchat', 'fa-snapchat', 'from-amber-400 to-yellow-500')" 
-                      class="w-full bg-slate-900 border border-slate-800 hover:border-indigo-500/40 rounded-xl p-2.5 flex items-center justify-between text-left transition-all active:scale-[0.99]">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-lg bg-amber-400 flex items-center justify-center text-slate-950 text-base">
-                    <i class="fa-brands fa-snapchat"></i>
-                  </div>
-                  <div>
-                    <p class="text-xs font-semibold text-white">Snapchat</p>
-                    <p class="text-[10px] text-slate-400">Stories & Chat • 20m limit</p>
-                  </div>
-                </div>
-                <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
-                  <i class="fa-solid fa-door-closed text-[9px]"></i> Gate Active
-                </span>
-              </button>
-
-              <button onclick="openFrictionGate('PUBG Mobile', 'fa-gamepad', 'from-orange-600 to-red-600')" 
-                      class="w-full bg-slate-900 border border-slate-800 hover:border-indigo-500/40 rounded-xl p-2.5 flex items-center justify-between text-left transition-all active:scale-[0.99]">
-                <div class="flex items-center gap-3">
-                  <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-orange-600 to-red-600 flex items-center justify-center text-white text-base">
-                    <i class="fa-solid fa-gamepad"></i>
-                  </div>
-                  <div>
-                    <p class="text-xs font-semibold text-white">PUBG Mobile</p>
-                    <p class="text-[10px] text-slate-400">Gaming • Sync Blocked</p>
-                  </div>
-                </div>
-                <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
-                  <i class="fa-solid fa-book-bookmark text-[9px]"></i> Sync Blocked
-                </span>
-              </button>
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 max-w-xs mx-auto text-left">
+              <p class="text-[10px] text-slate-400">Stated Purpose:</p>
+              <p id="active-purpose-text" class="text-xs font-medium text-slate-200 italic mt-0.5">"Checking CS group updates"</p>
             </div>
           </div>
 
-        </section>
+          <button onclick="triggerHardLockNow()" class="w-full bg-slate-900 border border-slate-800 text-rose-400 text-xs py-2 rounded-xl font-medium">
+            Simulate Time Out (Enforce Lock)
+          </button>
+        </div>
 
-        <!-- ==================== TAB 2: INTENTIONAL FRICTION GATE & HARD LOCK ==================== -->
-        <section id="tab-friction" class="hidden flex-1 flex flex-col p-4 justify-between transition-all duration-300 relative bg-slate-950">
-          
-          <div id="friction-prompt-view" class="space-y-3 my-auto">
-            <div class="text-center">
-              <div id="gate-app-icon" class="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-white text-xl shadow-lg mb-2">
-                <i id="gate-app-icon-i" class="fa-brands fa-instagram"></i>
-              </div>
-              <span class="bg-indigo-500/10 text-indigo-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-indigo-500/20">Intentional Gateway</span>
-              <h3 class="text-base font-bold text-white mt-1">Why open <span id="gate-app-title">Instagram</span> now?</h3>
-              <p class="text-[11px] text-slate-400">Break mindless habit loops. Select your goal.</p>
+        <!-- HARD LOCK MODAL OVERLAY -->
+        <div id="friction-lockdown-view" class="hidden absolute inset-0 bg-slate-950 z-50 p-5 flex flex-col justify-between text-center border-2 border-rose-600/30">
+          <div class="flex justify-center pt-2">
+            <span class="bg-rose-500/10 text-rose-400 border border-rose-500/20 text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+              <i class="fa-solid fa-lock"></i> 5-Hour Hard Lock Enforced
+            </span>
+          </div>
+
+          <div class="my-auto space-y-3">
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-slate-900 border border-rose-500/40 flex items-center justify-center text-rose-400 text-2xl shadow-lg">
+              <i class="fa-solid fa-lock"></i>
             </div>
-
-            <div class="space-y-1.5">
-              <label class="text-[10.5px] font-semibold text-slate-400 uppercase tracking-wider block">1. State Your Purpose</label>
-              <div class="grid grid-cols-2 gap-2">
-                <button type="button" onclick="setReason('Quick DM Update')" class="bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left">💬 Quick DM Update</button>
-                <button type="button" onclick="setReason('Study Group Reference')" class="bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 text-left">📚 Study Reference</button>
-              </div>
-              <input type="text" id="custom-intention-input" value="Quick DM Update" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-1.5 text-xs text-slate-200 outline-none">
-            </div>
-
-            <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-2 flex items-start gap-2">
-              <i class="fa-solid fa-triangle-exclamation text-amber-400 text-xs mt-0.5"></i>
-              <p class="text-[10px] text-amber-200/90 leading-tight">
-                <strong>Strict Rule:</strong> When time ends, app automatically locks for <strong>5 HOURS</strong> with zero bypass.
+            <div>
+              <h3 class="text-base font-bold text-white">Access Locked!</h3>
+              <p class="text-xs text-slate-400 mt-1 max-w-[220px] mx-auto">
+                <span id="locked-target-app-name" class="text-white font-semibold">Instagram</span> is locked for <strong class="text-rose-400">5 Hours</strong> to protect lecture focus.
               </p>
             </div>
 
-            <div class="space-y-2 pt-1">
-              <button onclick="startFrictionSession()" class="w-full bg-gradient-to-r from-indigo-600 to-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs shadow-lg flex items-center justify-center gap-2">
-                <span>Start Intentional Session</span>
-                <i class="fa-solid fa-arrow-right text-xs"></i>
-              </button>
-
-              <button onclick="triggerHardLockNow()" class="w-full bg-rose-950/60 hover:bg-rose-900/60 border border-rose-500/40 text-rose-300 font-semibold py-2 rounded-xl text-xs flex items-center justify-center gap-1.5">
-                <i class="fa-solid fa-lock text-rose-400"></i>
-                <span>Trigger 5-Hour Hard Lock Now</span>
-              </button>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 max-w-xs mx-auto">
+              <span class="text-[9.5px] font-semibold text-slate-400 uppercase tracking-widest block">Lockdown Countdown</span>
+              <span id="lockdown-clock-display" class="text-2xl font-black text-rose-400 font-mono tracking-wider">04:59:55</span>
+              <p class="text-[9.5px] text-slate-500 mt-1">Un-bypassable Focus Mode Active</p>
             </div>
           </div>
 
-          <div id="friction-active-view" class="hidden flex-1 flex flex-col justify-between py-6 text-center">
-            <div class="flex justify-between items-center">
-              <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold px-2.5 py-0.5 rounded-full">Session Active</span>
-              <button onclick="triggerHardLockNow()" class="text-rose-400 text-xs font-medium hover:underline">Force Lock</button>
-            </div>
-
-            <div class="my-auto space-y-4">
-              <div class="relative w-40 h-40 mx-auto flex items-center justify-center">
-                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="6" class="text-slate-900" fill="transparent" />
-                  <circle id="gate-timer-ring" cx="50" cy="50" r="42" stroke="currentColor" stroke-width="6" class="text-emerald-400 transition-all duration-1000" fill="transparent" stroke-dasharray="263.89" stroke-dashoffset="0" stroke-linecap="round" />
-                </svg>
-                <div class="absolute inset-0 flex flex-col items-center justify-center">
-                  <span id="gate-active-clock" class="text-2xl font-black text-white font-mono">00:08</span>
-                  <span class="text-[9px] text-slate-400 uppercase tracking-widest">Remaining</span>
-                </div>
-              </div>
-
-              <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 max-w-xs mx-auto text-left">
-                <p class="text-[10px] text-slate-400">Stated Purpose:</p>
-                <p id="active-purpose-text" class="text-xs font-medium text-slate-200 italic mt-0.5">"Checking CS group updates"</p>
-              </div>
-            </div>
-
-            <button onclick="triggerHardLockNow()" class="w-full bg-slate-900 border border-rose-500/30 text-rose-300 text-xs py-2 rounded-xl font-medium">
-              Simulate Time Out (Enforce Lock)
-            </button>
-          </div>
-
-          <!-- HARD LOCK MODAL OVERLAY -->
-          <div id="friction-lockdown-view" class="hidden absolute inset-0 bg-slate-950 z-50 p-5 flex flex-col justify-between text-center border-2 border-rose-600/40">
-            <div class="flex justify-center pt-2">
-              <span class="bg-rose-500/20 text-rose-400 border border-rose-500/40 text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
-                <i class="fa-solid fa-shield-cat"></i> Hard Lock Enforced
-              </span>
-            </div>
-
-            <div class="my-auto space-y-3">
-              <div class="w-16 h-16 mx-auto rounded-3xl bg-gradient-to-tr from-rose-600 to-red-700 flex items-center justify-center text-white text-2xl shadow-xl shadow-rose-600/30 animate-bounce">
-                <i class="fa-solid fa-lock"></i>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-white">Access Locked!</h3>
-                <p class="text-xs text-slate-400 mt-1 max-w-[220px] mx-auto">
-                  <span id="locked-target-app-name" class="text-white font-semibold">Instagram</span> is locked for <strong class="text-rose-400">5 Hours</strong> to ensure focus.
-                </p>
-              </div>
-
-              <div class="bg-slate-900 border border-rose-500/30 rounded-2xl p-3.5 max-w-xs mx-auto">
-                <span class="text-[9.5px] font-semibold text-slate-400 uppercase tracking-widest block">Lockdown Countdown</span>
-                <span id="lockdown-clock-display" class="text-2xl font-black text-rose-400 font-mono tracking-wider">04:59:55</span>
-                <p class="text-[9.5px] text-slate-500 mt-1">Un-bypassable Mode Active</p>
-              </div>
-            </div>
-
-            <button onclick="closeFrictionView()" class="w-full bg-slate-900 border border-slate-800 text-slate-300 py-2 rounded-xl text-xs font-semibold">
-              Return to Dashboard
-            </button>
-          </div>
-
-        </section>
-
-        <!-- ==================== TAB 3: CLASSROOM & PROOF-OF-WORK ==================== -->
-        <section id="tab-classroom" class="hidden flex-1 flex flex-col p-4 space-y-3 transition-all duration-300">
-          <div class="flex justify-between items-center">
-            <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                <i class="fa-solid fa-graduation-cap"></i>
-              </div>
-              <div>
-                <h3 class="text-xs font-bold text-white">Academic Protocols</h3>
-                <p class="text-[9.5px] text-slate-400">Google Sync & Proof-of-Work</p>
-              </div>
-            </div>
-            <span id="classroom-field-badge" class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[9.5px] font-semibold px-2 py-0.5 rounded-full">CS Major</span>
-          </div>
-
-          <!-- Proof of Work AI Validator -->
-          <div class="bg-slate-900 border border-indigo-500/30 rounded-2xl p-3 space-y-2">
-            <div class="flex justify-between items-center">
-              <span class="text-[10px] font-bold uppercase text-indigo-400 tracking-wider">Proof-of-Work Gate</span>
-              <span class="bg-indigo-500/10 text-indigo-300 text-[9px] px-2 py-0.5 rounded border border-indigo-500/20">AI Verified</span>
-            </div>
-            <p id="pow-description" class="text-[10px] text-slate-400">Submit a compiling code snippet or completed study log to earn 15m unlock time.</p>
-            <textarea id="code-snippet-input" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2 text-[10px] font-mono text-emerald-400 focus:outline-none focus:border-indigo-500" placeholder="// Paste C++ / Python snippet here..."></textarea>
-            <button onclick="verifyCodeSnippet()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-[10px] py-1.5 rounded-lg transition-all flex items-center justify-center gap-1.5">
-              <i class="fa-solid fa-code"></i> Verify Work & Unlock Break
-            </button>
-          </div>
-
-          <!-- Dead Man's Switch -->
-          <div class="bg-gradient-to-r from-rose-950/40 to-slate-900 border border-rose-500/30 rounded-2xl p-3 space-y-1.5">
-            <div class="flex justify-between items-center">
-              <span class="text-[10px] font-bold uppercase text-rose-400 tracking-wider">Dead Man's Switch (Code Red)</span>
-              <span class="bg-rose-500/20 text-rose-300 text-[9px] px-2 py-0.5 rounded font-bold">Active</span>
-            </div>
-            <p class="text-[10.5px] text-slate-300 font-medium">Assignment due in &lt; 6 Hours!</p>
-            <p class="text-[9.5px] text-slate-400">Non-essential notifications silenced & screen dimmed for non-academic apps.</p>
-          </div>
-
-          <!-- Dynamic Tasks Container -->
-          <div class="space-y-2 pt-1">
-            <div class="flex justify-between items-center px-1">
-              <h4 class="text-[10.5px] font-bold uppercase text-slate-400 tracking-wider">LMS / Workload Sync</h4>
-              <span class="text-[9.5px] text-emerald-400">Live API</span>
-            </div>
-            <div id="dynamic-tasks-list" class="space-y-2">
-              <!-- Rendered via JS -->
-            </div>
-          </div>
-        </section>
-
-        <!-- ==================== TAB 4: NAMAZ & MESH ==================== -->
-        <section id="tab-schedule" class="hidden flex-1 flex flex-col p-4 space-y-3 transition-all duration-300">
-          <div class="flex justify-between items-center">
-            <div>
-              <h3 class="text-xs font-bold text-white">Namaz, Routine & Mesh</h3>
-              <p class="text-[9.5px] text-slate-400">Cultural Routine & Peer Focus Mesh</p>
-            </div>
-            <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[9.5px] font-semibold px-2 py-0.5 rounded-full">Auto-Locked</span>
-          </div>
-
-          <!-- Peer Focus Mesh -->
-          <div class="bg-slate-900 border border-purple-500/30 rounded-2xl p-3 space-y-1.5">
-            <div class="flex justify-between items-center">
-              <span class="text-[10px] font-bold uppercase text-purple-400 tracking-wider">Campus Peer Focus Mesh</span>
-              <span class="bg-purple-500/20 text-purple-300 text-[9px] px-2 py-0.5 rounded font-semibold">4 Synced</span>
-            </div>
-            <p class="text-[10.5px] text-slate-200 font-medium">Group Study Lock Active</p>
-            <p class="text-[9.5px] text-slate-400">If any peer opens social apps, a focus alert is sent to the mesh.</p>
-          </div>
-
-          <!-- Routine Slots -->
-          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-3 space-y-2">
-            <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Today's Routine Slots</h4>
-            <div class="space-y-1.5 text-xs">
-              <div class="flex items-center justify-between p-1.5 rounded-lg bg-slate-950/50">
-                <span class="text-slate-300 font-medium">05:15 AM - Fajr Prayer</span>
-                <span class="text-[10px] text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded">Rest Slot</span>
-              </div>
-              <div class="flex items-center justify-between p-1.5 rounded-lg bg-emerald-950/30 border border-emerald-500/30">
-                <span class="text-white font-semibold">01:15 PM - Dhuhr & Lunch</span>
-                <span class="text-[10px] text-emerald-400 font-bold bg-emerald-500/20 px-2 py-0.5 rounded">Active Slot</span>
-              </div>
-              <div class="flex items-center justify-between p-1.5 rounded-lg bg-slate-950/50">
-                <span class="text-slate-300 font-medium">04:30 PM - Asr Prayer</span>
-                <span class="text-[10px] text-indigo-400 font-semibold bg-indigo-500/10 px-2 py-0.5 rounded">Pause Apps</span>
-              </div>
-              <div class="flex items-center justify-between p-1.5 rounded-lg bg-slate-950/50">
-                <span class="text-slate-300 font-medium">06:45 PM - Maghrib Prayer</span>
-                <span class="text-[10px] text-indigo-400 font-semibold bg-indigo-500/10 px-2 py-0.5 rounded">Pause Apps</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Emergency Whitelist -->
-          <div class="space-y-2 pt-1">
-            <div class="flex justify-between items-center px-1">
-              <h4 class="text-[10.5px] font-bold text-slate-400 uppercase tracking-wider">Priority Emergency Whitelist</h4>
-              <span class="text-[9.5px] text-emerald-400">Bypasses All Locks</span>
-            </div>
-
-            <div class="grid grid-cols-2 gap-2">
-              <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex items-center justify-between">
-                <div>
-                  <p class="text-xs font-semibold text-white">Father</p>
-                  <p class="text-[9.5px] text-slate-400">+92 300 1234567</p>
-                </div>
-                <button onclick="testEmergencyCall('Father')" class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs">
-                  <i class="fa-solid fa-phone"></i>
-                </button>
-              </div>
-              <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex items-center justify-between">
-                <div>
-                  <p class="text-xs font-semibold text-white">Mother</p>
-                  <p class="text-[9.5px] text-slate-400">+92 301 9876543</p>
-                </div>
-                <button onclick="testEmergencyCall('Mother')" class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs">
-                  <i class="fa-solid fa-phone"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ==================== TAB 5: SAFETY ==================== -->
-        <section id="tab-safety" class="hidden flex-1 flex flex-col p-4 space-y-3 transition-all duration-300">
-          <div class="flex justify-between items-center">
-            <div>
-              <h3 class="text-xs font-bold text-white">AI Content & Safety Shield</h3>
-              <p class="text-[9.5px] text-slate-400">System-Wide Web Filter</p>
-            </div>
-            <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[9.5px] font-bold px-2.5 py-0.5 rounded-full">ACTIVE</span>
-          </div>
-
-          <div class="bg-slate-900 border border-slate-800 rounded-2xl p-3 space-y-3">
-            <div class="flex items-center justify-between">
-              <div>
-                <p class="text-xs font-semibold text-white">Mandatory SafeSearch</p>
-                <p class="text-[9.5px] text-slate-400">Google, YouTube & Bing filtering</p>
-              </div>
-              <div class="w-8 h-4 bg-emerald-500 rounded-full flex items-center justify-end px-0.5">
-                <div class="w-3 h-3 bg-white rounded-full"></div>
-              </div>
-            </div>
-            <div class="border-t border-slate-800 pt-2 space-y-2 text-xs text-slate-200">
-              <div class="flex justify-between"><span>🚫 Explicit / Adult Domains</span><span class="text-emerald-400 font-bold">Enforced</span></div>
-              <div class="flex justify-between"><span>🎰 Gambling & Betting Sites</span><span class="text-emerald-400 font-bold">Enforced</span></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ==================== TAB 6: PARENT PORTAL ==================== -->
-        <section id="tab-parent" class="hidden flex-1 flex flex-col p-4 space-y-3 transition-all duration-300 bg-slate-950">
-          <div class="bg-gradient-to-r from-purple-950/60 to-slate-900 border border-purple-500/30 rounded-2xl p-3 flex justify-between items-center">
-            <div>
-              <span class="bg-purple-500/20 text-purple-300 text-[9px] font-bold px-2 py-0.5 rounded">Parent Dashboard</span>
-              <h3 class="text-sm font-bold text-white mt-1">Telemetry Monitor</h3>
-            </div>
-          </div>
-          <button onclick="triggerHardLockNow()" class="w-full bg-gradient-to-r from-purple-600 to-rose-600 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2">
-            <i class="fa-solid fa-lock"></i><span>Trigger Immediate Remote Study Lock</span>
+          <button onclick="closeFrictionView()" class="w-full bg-slate-900 border border-slate-800 text-slate-300 py-2 rounded-xl text-xs font-semibold">
+            Return to Dashboard
           </button>
-        </section>
+        </div>
 
-      </div>
+      </section>
 
-      <!-- App Bottom Nav Bar -->
-      <nav class="h-14 bg-slate-900/95 border-t border-slate-800 grid grid-cols-6 items-center px-1 z-40 select-none">
-        <button onclick="switchTab('tab-dashboard')" id="nav-tab-dashboard" class="flex flex-col items-center gap-0.5 text-emerald-400">
-          <i class="fa-solid fa-house text-xs"></i><span class="text-[8.5px] font-semibold">Home</span>
-        </button>
-        <button onclick="switchTab('tab-friction')" id="nav-tab-friction" class="flex flex-col items-center gap-0.5 text-slate-400">
-          <i class="fa-solid fa-door-closed text-xs"></i><span class="text-[8.5px] font-semibold">Friction</span>
-        </button>
-        <button onclick="switchTab('tab-classroom')" id="nav-tab-classroom" class="flex flex-col items-center gap-0.5 text-slate-400">
-          <i class="fa-solid fa-graduation-cap text-xs"></i><span class="text-[8.5px] font-semibold">Class</span>
-        </button>
-        <button onclick="switchTab('tab-schedule')" id="nav-tab-schedule" class="flex flex-col items-center gap-0.5 text-slate-400">
-          <i class="fa-solid fa-mosque text-xs"></i><span class="text-[8.5px] font-semibold">Namaz</span>
-        </button>
-        <button onclick="switchTab('tab-safety')" id="nav-tab-safety" class="flex flex-col items-center gap-0.5 text-slate-400">
-          <i class="fa-solid fa-shield-cat text-xs"></i><span class="text-[8.5px] font-semibold">Safety</span>
-        </button>
-        <button onclick="switchTab('tab-parent')" id="nav-tab-parent" class="flex flex-col items-center gap-0.5 text-slate-400">
-          <i class="fa-solid fa-user-shield text-xs"></i><span class="text-[8.5px] font-semibold">Parent</span>
-        </button>
-      </nav>
+      <!-- ==================== TAB 3: CLASSROOM & PROOF-OF-WORK ==================== -->
+      <section id="tab-classroom" class="hidden flex-1 flex flex-col p-4 space-y-4 transition-all duration-300">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-amber-400">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h3 class="text-xs font-bold text-white">Academic Protocols</h3>
+              <p class="text-[9.5px] text-slate-400">LMS Sync & Proof-of-Work</p>
+            </div>
+          </div>
+          <span id="classroom-field-badge" class="bg-slate-900 text-amber-400 border border-slate-800 text-[9.5px] font-semibold px-2.5 py-0.5 rounded-full">CS Major</span>
+        </div>
 
-      <!-- Home Indicator -->
-      <div class="h-4 bg-slate-950 flex justify-center items-center pb-0.5">
-        <div class="w-28 h-1 bg-slate-700 rounded-full"></div>
-      </div>
+        <!-- Proof of Work AI Validator -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-[10px] font-bold uppercase text-indigo-400 tracking-wider">Proof-of-Work Verification</span>
+            <span class="bg-slate-800 text-slate-300 text-[9px] px-2 py-0.5 rounded border border-slate-700">Task Gate</span>
+          </div>
+          <p id="pow-description" class="text-[10px] text-slate-400">Submit your assignment code or study log to earn focus break minutes.</p>
+          <textarea id="code-snippet-input" rows="2" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-[10px] font-mono text-emerald-400 outline-none focus:border-slate-700" placeholder="// Paste C++ / Python snippet or study log..."></textarea>
+          <button onclick="verifyCodeSnippet()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-[10px] py-2 rounded-lg transition-all flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-check-circle"></i> Verify Work & Earn Break
+          </button>
+        </div>
+
+        <!-- Dynamic Tasks Container -->
+        <div class="space-y-2 pt-1">
+          <div class="flex justify-between items-center px-1">
+            <h4 class="text-[10.5px] font-bold uppercase text-slate-400 tracking-wider">LMS Workload Sync</h4>
+            <span class="text-[9.5px] text-emerald-400">Live API</span>
+          </div>
+          <div id="dynamic-tasks-list" class="space-y-2.5">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 4: NAMAZ & ROUTINE ==================== -->
+      <section id="tab-schedule" class="hidden flex-1 flex flex-col p-4 space-y-4 transition-all duration-300">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-xs font-bold text-white">Namaz Timetable & Routine</h3>
+            <p class="text-[9.5px] text-slate-400">Cultural Schedule Integration</p>
+          </div>
+          <button onclick="toggleQuickGuide()" class="bg-slate-900 border border-slate-800 text-emerald-400 text-[9.5px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+            <i class="fa-solid fa-circle-info"></i> Guide
+          </button>
+        </div>
+
+        <!-- Explanatory Banner for Badges -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-2.5 text-[10px] text-slate-300 space-y-1">
+          <p class="font-bold text-white flex items-center gap-1">
+            <i class="fa-solid fa-list-check text-emerald-400"></i> Understanding Routine Slots:
+          </p>
+          <p><span class="text-indigo-400 font-semibold">Pause Apps:</span> Apps locked automatically during prayer times.</p>
+          <p><span class="text-emerald-400 font-semibold">Rest Slot:</span> Scheduled break window where app restrictions pause for healthy rest.</p>
+        </div>
+
+        <!-- Daily Timetable Timeline INCLUDING ISHA -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5 space-y-2">
+          <h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">5 Daily Prayers & Rest Slots</h4>
+          
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center justify-between p-2 rounded-xl bg-slate-950/60 border border-slate-850">
+              <div>
+                <span class="text-slate-200 font-semibold block">05:15 AM - Fajr Prayer</span>
+                <span class="text-[9.5px] text-slate-400">Morning focus initiation</span>
+              </div>
+              <span class="text-[9.5px] text-indigo-400 font-semibold bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded-md">Pause Apps</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2 rounded-xl bg-emerald-950/20 border border-emerald-500/20">
+              <div>
+                <span class="text-white font-bold block">01:15 PM - Dhuhr & Lunch Rest</span>
+                <span class="text-[9.5px] text-slate-400">Midday break & lunch window</span>
+              </div>
+              <span class="text-[9.5px] text-emerald-400 font-bold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-md">Rest Slot</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2 rounded-xl bg-slate-950/60 border border-slate-850">
+              <div>
+                <span class="text-slate-200 font-semibold block">04:30 PM - Asr Prayer</span>
+                <span class="text-[9.5px] text-slate-400">Afternoon prayer break</span>
+              </div>
+              <span class="text-[9.5px] text-indigo-400 font-semibold bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded-md">Pause Apps</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2 rounded-xl bg-slate-950/60 border border-slate-850">
+              <div>
+                <span class="text-slate-200 font-semibold block">06:45 PM - Maghrib Prayer</span>
+                <span class="text-[9.5px] text-slate-400">Evening transition slot</span>
+              </div>
+              <span class="text-[9.5px] text-indigo-400 font-semibold bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded-md">Pause Apps</span>
+            </div>
+
+            <div class="flex items-center justify-between p-2 rounded-xl bg-slate-950/60 border border-slate-850">
+              <div>
+                <span class="text-slate-200 font-semibold block">08:15 PM - Isha Prayer & Dinner</span>
+                <span class="text-[9.5px] text-slate-400">Night prayer & family time</span>
+              </div>
+              <span class="text-[9.5px] text-indigo-400 font-semibold bg-indigo-500/10 border border-indigo-500/20 px-2 py-0.5 rounded-md">Pause Apps</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Whitelist Section -->
+        <div class="space-y-2 pt-1">
+          <div class="flex justify-between items-center px-1">
+            <h4 class="text-[10.5px] font-bold text-slate-400 uppercase tracking-wider">Priority Emergency Whitelist</h4>
+            <span class="text-[9.5px] text-emerald-400">Bypasses Lock</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2">
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-semibold text-white">Father</p>
+                <p class="text-[9.5px] text-slate-400">+92 300 1234567</p>
+              </div>
+              <button onclick="testEmergencyCall('Father')" class="w-7 h-7 rounded-lg bg-slate-800 text-emerald-400 flex items-center justify-center text-xs hover:bg-slate-750">
+                <i class="fa-solid fa-phone"></i>
+              </button>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-semibold text-white">Mother</p>
+                <p class="text-[9.5px] text-slate-400">+92 301 9876543</p>
+              </div>
+              <button onclick="testEmergencyCall('Mother')" class="w-7 h-7 rounded-lg bg-slate-800 text-emerald-400 flex items-center justify-center text-xs hover:bg-slate-750">
+                <i class="fa-solid fa-phone"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==================== TAB 5: AI SAFETY & HELP HELPLINE ==================== -->
+      <section id="tab-safety" class="hidden flex-1 flex flex-col p-4 space-y-4 transition-all duration-300">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-xs font-bold text-white">AI Content & Support Shield</h3>
+            <p class="text-[9.5px] text-slate-400">System Safety & Campus Help</p>
+          </div>
+          <span class="bg-slate-900 text-emerald-400 border border-slate-800 text-[9.5px] font-bold px-2.5 py-0.5 rounded-full">ACTIVE</span>
+        </div>
+
+        <!-- Campus Counseling & Crisis Helpline -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 space-y-2">
+          <div class="flex justify-between items-center">
+            <span class="text-[10px] font-bold uppercase text-emerald-400 tracking-wider">Campus Counseling Center</span>
+            <span class="bg-emerald-500/10 text-emerald-300 text-[9px] px-2 py-0.5 rounded font-bold">24/7 Confidential</span>
+          </div>
+          <p class="text-[10.5px] text-slate-300">Need to talk to a real person? Connect with Al-Ghazali Student Support.</p>
+          <button onclick="alert('Connecting to Al-Ghazali Student Counseling Helpline (+92 300 0000000)...')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold text-xs py-2 rounded-xl flex items-center justify-center gap-2">
+            <i class="fa-solid fa-headset"></i> Call Student Counselor Now
+          </button>
+        </div>
+
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5 space-y-3">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-xs font-semibold text-white">Mandatory SafeSearch</p>
+              <p class="text-[9.5px] text-slate-400">Google, YouTube & Bing filtering</p>
+            </div>
+            <div class="w-8 h-4 bg-emerald-500/80 rounded-full flex items-center justify-end px-0.5">
+              <div class="w-3 h-3 bg-white rounded-full shadow"></div>
+            </div>
+          </div>
+          <div class="border-t border-slate-800 pt-2.5 space-y-2 text-xs text-slate-300">
+            <div class="flex justify-between"><span>🚫 Explicit Content Filter</span><span class="text-emerald-400 font-semibold">Enforced</span></div>
+            <div class="flex justify-between"><span>🎰 Gambling & Distraction Block</span><span class="text-emerald-400 font-semibold">Enforced</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 6: ACCOUNTABILITY & TELEMETRY ==================== -->
+      <section id="tab-parent" class="hidden flex-1 flex flex-col p-4 space-y-4 transition-all duration-300 bg-slate-950">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 flex justify-between items-center">
+          <div>
+            <span class="bg-slate-800 text-slate-300 text-[9px] font-bold px-2 py-0.5 rounded">Personal Telemetry</span>
+            <h3 class="text-sm font-bold text-white mt-1">Focus & Well-Being Log</h3>
+            <p class="text-[9.5px] text-slate-400">Privacy-First • Local Storage Only</p>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-3.5 space-y-2">
+          <p class="text-xs font-semibold text-white">Self-Enforced Study Lock</p>
+          <p class="text-[10px] text-slate-400">Trigger immediate focus mode during critical assignment prep.</p>
+          <button onclick="triggerHardLockNow()" class="w-full bg-slate-800 hover:bg-slate-750 border border-slate-700 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 mt-1">
+            <i class="fa-solid fa-lock text-rose-400"></i>
+            <span>Trigger Immediate Study Lock</span>
+          </button>
+        </div>
+      </section>
 
     </div>
-  </main>
+
+    <!-- Native Web App Bottom Nav Bar -->
+    <nav class="h-16 bg-slate-900/95 border-t border-slate-800 grid grid-cols-6 items-center px-1 z-40 select-none pb-1">
+      <button onclick="switchTab('tab-dashboard')" id="nav-tab-dashboard" class="flex flex-col items-center gap-1 text-emerald-400 transition-colors">
+        <i class="fa-solid fa-house text-sm"></i><span class="text-[9px] font-semibold">Home</span>
+      </button>
+      <button onclick="switchTab('tab-friction')" id="nav-tab-friction" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors">
+        <i class="fa-solid fa-door-closed text-sm"></i><span class="text-[9px] font-semibold">Friction</span>
+      </button>
+      <button onclick="switchTab('tab-classroom')" id="nav-tab-classroom" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors">
+        <i class="fa-solid fa-graduation-cap text-sm"></i><span class="text-[9px] font-semibold">Class</span>
+      </button>
+      <button onclick="switchTab('tab-schedule')" id="nav-tab-schedule" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors">
+        <i class="fa-solid fa-mosque text-sm"></i><span class="text-[9px] font-semibold">Namaz</span>
+      </button>
+      <button onclick="switchTab('tab-safety')" id="nav-tab-safety" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors">
+        <i class="fa-solid fa-shield-cat text-sm"></i><span class="text-[9px] font-semibold">Safety</span>
+      </button>
+      <button onclick="switchTab('tab-parent')" id="nav-tab-parent" class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors">
+        <i class="fa-solid fa-user-shield text-sm"></i><span class="text-[9px] font-semibold">Log</span>
+      </button>
+    </nav>
+
+  </div>
 
   <!-- Live Emergency Call Test Modal -->
   <div id="emergency-call-modal" class="hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex justify-center items-center p-4">
-    <div class="bg-slate-900 border border-emerald-500/40 rounded-3xl p-5 max-w-xs w-full text-center space-y-4 shadow-2xl">
-      <div class="w-14 h-14 mx-auto rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl animate-bounce">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-5 max-w-xs w-full text-center space-y-4 shadow-2xl">
+      <div class="w-12 h-12 mx-auto rounded-full bg-slate-800 text-emerald-400 flex items-center justify-center text-xl animate-bounce">
         <i class="fa-solid fa-phone-flip"></i>
       </div>
       <div>
-        <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full">DND Override Granted</span>
+        <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-emerald-500/20">DND Override Granted</span>
         <h3 class="text-base font-bold text-white mt-1">Incoming Call: <span id="call-contact-name">Father</span></h3>
         <p class="text-xs text-slate-400">Emergency whitelist allows calls through 5-hour hard lock.</p>
       </div>
-      <button onclick="closeEmergencyCall()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-2 rounded-xl text-xs">
+      <button onclick="closeEmergencyCall()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold py-2 rounded-xl text-xs">
         Answer Call
       </button>
     </div>
   </div>
 
-  <!-- Midterm Presentation Controller Deck -->
-  <footer class="w-full max-w-2xl bg-slate-900/90 border border-slate-800 rounded-2xl p-2.5 mt-2 shadow-xl backdrop-blur-md">
-    <div class="flex items-center justify-between mb-1.5 px-1">
-      <span class="text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
-        <i class="fa-solid fa-sliders"></i> Midterm Presentation Live Controller
-      </span>
-      <span class="text-[10px] text-slate-400">Click to switch mobile screens live</span>
-    </div>
-
-    <div class="grid grid-cols-3 sm:grid-cols-6 gap-1.5">
-      <button onclick="switchTab('tab-dashboard')" class="bg-slate-800 text-slate-200 text-[11px] py-1.5 px-2 rounded-lg font-medium border border-slate-700 flex items-center justify-center gap-1">
-        <i class="fa-solid fa-house text-emerald-400 text-[10px]"></i><span>1. Home</span>
-      </button>
-      <button onclick="switchTab('tab-friction')" class="bg-slate-800 text-slate-200 text-[11px] py-1.5 px-2 rounded-lg font-medium border border-slate-700 flex items-center justify-center gap-1">
-        <i class="fa-solid fa-door-closed text-indigo-400 text-[10px]"></i><span>2. Friction</span>
-      </button>
-      <button onclick="switchTab('tab-classroom')" class="bg-slate-800 text-slate-200 text-[11px] py-1.5 px-2 rounded-lg font-medium border border-slate-700 flex items-center justify-center gap-1">
-        <i class="fa-solid fa-graduation-cap text-amber-400 text-[10px]"></i><span>3. Class</span>
-      </button>
-      <button onclick="switchTab('tab-schedule')" class="bg-slate-800 text-slate-200 text-[11px] py-1.5 px-2 rounded-lg font-medium border border-slate-700 flex items-center justify-center gap-1">
-        <i class="fa-solid fa-mosque text-emerald-400 text-[10px]"></i><span>4. Namaz</span>
-      </button>
-      <button onclick="switchTab('tab-safety')" class="bg-slate-800 text-slate-200 text-[11px] py-1.5 px-2 rounded-lg font-medium border border-slate-700 flex items-center justify-center gap-1">
-        <i class="fa-solid fa-shield-cat text-purple-400 text-[10px]"></i><span>5. Safety</span>
-      </button>
-      <button onclick="switchTab('tab-parent')" class="bg-slate-800 text-slate-200 text-[11px] py-1.5 px-2 rounded-lg font-medium border border-slate-700 flex items-center justify-center gap-1">
-        <i class="fa-solid fa-user-shield text-rose-400 text-[10px]"></i><span>6. Parent</span>
-      </button>
-    </div>
-  </footer>
-
-  <!-- Controller JavaScript Logic -->
+  <!-- Application Controller JavaScript Logic -->
   <script>
     let currentTab = 'tab-dashboard';
     let globalShieldActive = true;
@@ -598,29 +577,25 @@
     let secondsLeftActive = 8;
     let secondsLeftLockdown = 5 * 3600;
 
-    function updateClock() {
-      const now = new Date();
-      const hrs = String(now.getHours()).padStart(2, '0');
-      const mins = String(now.getMinutes()).padStart(2, '0');
-      document.getElementById('phone-clock').innerText = `${hrs}:${mins}`;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-
     function switchTab(tabId) {
       const tabs = ['tab-dashboard', 'tab-friction', 'tab-classroom', 'tab-schedule', 'tab-safety', 'tab-parent'];
       tabs.forEach(t => {
         const el = document.getElementById(t);
         if (el) el.classList.add('hidden');
         const navBtn = document.getElementById(`nav-${t}`);
-        if (navBtn) navBtn.className = 'flex flex-col items-center gap-0.5 text-slate-400';
+        if (navBtn) navBtn.className = 'flex flex-col items-center gap-1 text-slate-400 hover:text-slate-200 transition-colors';
       });
 
       const activeTab = document.getElementById(tabId);
       if (activeTab) activeTab.classList.remove('hidden');
       const activeNavBtn = document.getElementById(`nav-${tabId}`);
-      if (activeNavBtn) activeNavBtn.className = 'flex flex-col items-center gap-0.5 text-emerald-400';
+      if (activeNavBtn) activeNavBtn.className = 'flex flex-col items-center gap-1 text-emerald-400 transition-colors';
       currentTab = tabId;
+    }
+
+    function toggleQuickGuide() {
+      const modal = document.getElementById('quick-guide-modal');
+      modal.classList.toggle('hidden');
     }
 
     function toggleGlobalShield() {
@@ -628,10 +603,10 @@
       const btn = document.getElementById('main-shield-btn');
       const text = document.getElementById('shield-status-text');
       if (globalShieldActive) {
-        btn.className = "bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5";
+        btn.className = "bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-[10px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1.5";
         text.innerText = "Shield ACTIVE";
       } else {
-        btn.className = "bg-slate-800 border border-slate-700 text-slate-400 text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5";
+        btn.className = "bg-slate-900 border border-slate-800 text-slate-400 text-[10px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1.5";
         text.innerText = "Shield PAUSED";
       }
     }
@@ -640,7 +615,7 @@
       selectedAppGate = appName;
       document.getElementById('gate-app-title').innerText = appName;
       document.getElementById('gate-app-icon-i').className = `fa-brands ${iconClass}`;
-      document.getElementById('gate-app-icon').className = `w-12 h-12 mx-auto rounded-2xl bg-gradient-to-tr ${gradientClass} flex items-center justify-center text-white text-xl shadow-lg mb-2`;
+      document.getElementById('gate-app-icon').className = `w-12 h-12 mx-auto rounded-2xl bg-slate-900 border border-slate-700 flex items-center justify-center text-purple-400 text-xl shadow-md mb-2`;
 
       document.getElementById('friction-prompt-view').classList.remove('hidden');
       document.getElementById('friction-active-view').classList.add('hidden');
@@ -662,8 +637,6 @@
 
       secondsLeftActive = 8;
       const display = document.getElementById('gate-active-clock');
-      const ring = document.getElementById('gate-timer-ring');
-      const circumference = 263.89;
 
       if (gateTimerInterval) clearInterval(gateTimerInterval);
 
@@ -672,11 +645,6 @@
         const mins = String(Math.floor(secondsLeftActive / 60)).padStart(2, '0');
         const secs = String(secondsLeftActive % 60).padStart(2, '0');
         display.innerText = `${mins}:${secs}`;
-
-        if (ring) {
-          const offset = circumference * (1 - (secondsLeftActive / 8));
-          ring.style.strokeDashoffset = offset;
-        }
 
         if (secondsLeftActive <= 0) {
           clearInterval(gateTimerInterval);
@@ -728,13 +696,13 @@
         powPlaceholder: '// Paste Anki card count or Anatomy active recall score...',
         tasks: [
           { course: 'MED-401 Pathology', title: 'Cardiovascular System Case Review', due: 'Due Today • 8:00 PM' },
-          { course: 'MED-302 Pharmacology', title: 'Drug Classification Flashcard Review', due: 'Due Tomorrow • 10:00 AM' }
+          { course: 'MED-302 Pharmacology', title: 'Drug Classification Flashcards', due: 'Due Tomorrow • 10:00 AM' }
         ]
       },
       'engineering': {
         name: '⚙️ Engineering Profile',
         badge: 'Engineering Major',
-        powPlaceholder: '// Enter CAD rendering status or Circuit lab calculations...',
+        powPlaceholder: '// Enter CAD rendering status or Circuit calculations...',
         tasks: [
           { course: 'EE-201 Circuit Theory', title: 'Kirchhoff Mesh Analysis Problem Set', due: 'Due Today • 11:59 PM' },
           { course: 'ME-305 Thermodynamics', title: 'Heat Exchanger Lab Report', due: 'Due Tomorrow • 4:00 PM' }
@@ -772,13 +740,13 @@
       listContainer.innerHTML = '';
       selected.tasks.forEach(t => {
         listContainer.innerHTML += `
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-2.5 flex justify-between items-center">
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 flex justify-between items-center">
             <div>
-              <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-[9px] font-bold px-2 py-0.5 rounded">${t.course}</span>
+              <span class="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-[9px] font-semibold px-2 py-0.5 rounded">${t.course}</span>
               <h5 class="text-xs font-semibold text-white mt-1">${t.title}</h5>
               <p class="text-[9.5px] text-amber-400 mt-0.5">${t.due}</p>
             </div>
-            <button onclick="this.innerText='Submitted ✓'; this.className='bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-1 rounded font-bold';" class="bg-amber-500 text-slate-950 font-bold text-[10px] px-2.5 py-1.5 rounded-lg">
+            <button onclick="this.innerText='Submitted ✓'; this.className='bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] px-2.5 py-1.5 rounded-lg font-bold';" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-[10px] px-2.5 py-1.5 rounded-lg transition-all">
               Submit
             </button>
           </div>
